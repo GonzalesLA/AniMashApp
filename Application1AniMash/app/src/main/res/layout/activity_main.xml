@@ -1,0 +1,581 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3A606E"
+    tools:context=".MainActivity" >
+
+    <!--Linear Background-->
+    <View
+        android:id="@+id/Background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background" />
+
+    <!--Title Box-->
+    <View
+        android:id="@+id/title_logo_box"
+        android:layout_width="match_parent"
+        android:layout_height="102dp"
+        android:background="@drawable/topbox" />
+
+
+    <!--AniMash Logo-->
+    <ImageView
+        android:id="@+id/Animash_logo"
+        android:layout_width="113dp"
+        android:layout_height="102dp"
+        app:srcCompat="@drawable/animash_white_" />
+
+    <!--AniMash Title-->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="AniMash"
+        android:textSize="45dp"
+        android:fontFamily="@font/orbitron_bold"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="22dp"
+        android:layout_marginLeft="60dp" />
+
+    <!--display circle for animal 1-->
+    <ImageView
+        android:id="@+id/display_1"
+        android:layout_width="135dp"
+        android:layout_height="135dp"
+        android:src="@drawable/display_animal"
+        android:layout_marginTop="125dp"
+        android:layout_marginLeft="25dp"/>
+
+    <!--display cirlce for animal 2-->
+    <ImageView
+        android:id="@+id/display_2"
+        android:layout_width="135dp"
+        android:layout_height="135dp"
+        android:src="@drawable/display_animal"
+        android:layout_marginTop="125dp"
+        android:layout_marginLeft="249dp"/>
+
+    <!--Generate Button-->
+    <Button
+        android:id="@+id/generate"
+        android:layout_width="175dp"
+        android:layout_height="65dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="260dp"
+        android:text="Generate"
+        android:textColor="@color/white"
+        android:fontFamily="@font/orbitron_black"
+        android:textSize="20dp"
+        android:onClick="onButtonClick"/>
+
+    <!--Plus Sign-->
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:text="+"
+        android:textSize="65dp"
+        android:fontFamily="@font/orbitron_black"
+        android:textColor="@color/white"
+        android:layout_marginTop="155dp"
+        android:layout_marginLeft="192dp" />
+
+    <!--Info Button-->
+    <Button
+        android:id="@+id/instructions"
+        android:layout_width="80dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="280dp"
+        android:layout_marginLeft="25dp"
+        android:text="INST"
+        android:textSize="11dp"
+        android:fontFamily="@font/orbitron_bold"/>
+
+
+    <!--"Select Animal"-->
+    <View
+        android:id="@+id/Select_animal"
+        android:layout_width="367dp"
+        android:layout_height="150dp"
+        android:background="@drawable/topbox"
+        android:layout_marginTop="200dp"
+        android:layout_centerInParent="true" />
+
+    <TextView
+        android:id="@+id/Select_animal_title"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="Select Animal"
+        android:textSize="30dp"
+        android:fontFamily="@font/orbitron_bold"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="350dp"
+        android:layout_marginLeft="0dp" />
+
+    <!--Animal Select-->
+    <ScrollView
+        android:layout_width="367dp"
+        android:layout_height="426dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="0dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/select_box"
+        android:elevation="100dp" >
+
+
+
+        <GridLayout
+            android:id="@+id/gridLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="3"
+            android:rowCount="15"
+            android:background="@drawable/select_box"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp">
+
+
+            <!--Lion-->
+            <ImageButton
+                android:tag="lion"
+                android:id="@+id/lion_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="5dp"
+                android:onClick="onImageButtonClick"
+                android:background="@drawable/lion"
+                android:contentDescription="button to display lion on click"/>
+
+            <TextView
+                android:id="@+id/lion_text"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:fontFamily="@font/orbitron_black"
+                android:text="Lion"
+                android:layout_gravity="bottom|center"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp" />
+
+            <!--Fish-->
+            <ImageButton
+                android:tag="fish"
+                android:id="@+id/fish_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:onClick="onImageButtonClick"
+                android:background="@drawable/fish"
+                android:contentDescription="button to display fish on click"/>
+
+            <TextView
+                android:id="@+id/fish_text"
+                android:layout_row="1"
+                android:layout_column="1"
+                android:fontFamily="@font/orbitron_black"
+                android:text="Fish"
+                android:layout_gravity="bottom|center"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp" />
+
+            <!--Tiger-->
+            <ImageButton
+                android:tag="tiger"
+                android:id="@+id/tiger_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_row="0"
+                android:layout_column="2"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:onClick="onImageButtonClick"
+                android:background="@drawable/tiger"
+                android:contentDescription="button to display fish on click"/>
+
+            <TextView
+                android:id="@+id/tiger_text"
+                android:layout_row="1"
+                android:layout_column="2"
+                android:fontFamily="@font/orbitron_black"
+                android:text="Tiger"
+                android:layout_gravity="bottom|center"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp" />
+
+            <!--Leopard-->
+            <ImageButton
+                android:tag="leopard"
+                android:id="@+id/leopard_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_row="2"
+                android:layout_column="0"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:onClick="onImageButtonClick"
+                android:background="@drawable/leopard"
+                android:contentDescription="button to display fish on click"/>
+
+            <TextView
+                android:id="@+id/leopard_text"
+                android:layout_row="3"
+                android:layout_column="0"
+                android:fontFamily="@font/orbitron_black"
+                android:text="Leopard"
+                android:layout_gravity="bottom|center"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp" />
+
+            <!--Cat-->
+            <ImageButton
+                android:tag="cat"
+                android:id="@+id/cat_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_row="2"
+                android:layout_column="1"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:onClick="onImageButtonClick"
+                android:background="@drawable/cat"
+                android:contentDescription="button to display fish on click"/>
+
+            <TextView
+                android:id="@+id/cat_title"
+                android:layout_row="3"
+                android:layout_column="1"
+                android:fontFamily="@font/orbitron_black"
+                android:text="Cat"
+                android:layout_gravity="bottom|center"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp" />
+
+            <!--Bug-->
+            <ImageButton
+                android:tag="bugs"
+                android:id="@+id/bug_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_row="2"
+                android:layout_column="2"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:onClick="onImageButtonClick"
+                android:background="@drawable/bugs"
+                android:contentDescription="button to display fish on click"/>
+
+            <TextView
+                android:id="@+id/bugs_title"
+                android:layout_row="3"
+                android:layout_column="2"
+                android:fontFamily="@font/orbitron_black"
+                android:text="Bugs"
+                android:layout_gravity="bottom|center"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp" />
+
+            <!--Shark-->
+            <ImageButton
+                android:tag="shark"
+                android:id="@+id/shark_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_row="4"
+                android:layout_column="0"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:onClick="onImageButtonClick"
+                android:background="@drawable/shark"
+                android:contentDescription="button to display fish on click"/>
+
+            <TextView
+                android:id="@+id/shark_title"
+                android:layout_row="5"
+                android:layout_column="0"
+                android:fontFamily="@font/orbitron_black"
+                android:text="Shark"
+                android:layout_gravity="bottom|center"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp" />
+
+            <!--Bird-->
+            <ImageButton
+                android:tag="birds"
+                android:id="@+id/bird_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_row="4"
+                android:layout_column="1"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:onClick="onImageButtonClick"
+                android:background="@drawable/birds"
+                android:contentDescription="button to display fish on click"/>
+
+            <TextView
+                android:id="@+id/birds_title"
+                android:layout_row="5"
+                android:layout_column="1"
+                android:fontFamily="@font/orbitron_black"
+                android:text="Birds"
+                android:layout_gravity="bottom|center"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp" />
+
+            <!--Snake-->
+            <ImageButton
+                android:tag="snake"
+                android:id="@+id/snake_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_row="4"
+                android:layout_column="2"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:onClick="onImageButtonClick"
+                android:background="@drawable/snake"
+                android:contentDescription="button to display fish on click"/>
+
+            <TextView
+                android:id="@+id/snake_title"
+                android:layout_row="5"
+                android:layout_column="2"
+                android:fontFamily="@font/orbitron_black"
+                android:text="Snakes"
+                android:layout_gravity="bottom|center"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp" />
+
+            <!--Turtle-->
+            <ImageButton
+                android:tag="turtle"
+                android:id="@+id/turtle_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_row="6"
+                android:layout_column="0"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:onClick="onImageButtonClick"
+                android:background="@drawable/turtle"
+                android:contentDescription="button to display fish on click"/>
+
+            <TextView
+                android:id="@+id/turtle_title"
+                android:layout_row="7"
+                android:layout_column="0"
+                android:fontFamily="@font/orbitron_black"
+                android:text="Turtle"
+                android:layout_gravity="bottom|center"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp" />
+
+            <!--Frog-->
+            <ImageButton
+                android:tag="frog"
+                android:id="@+id/frog_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_row="6"
+                android:layout_column="1"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:onClick="onImageButtonClick"
+                android:background="@drawable/frog"
+                android:contentDescription="button to display fish on click"/>
+
+            <TextView
+                android:id="@+id/frog_title"
+                android:layout_row="7"
+                android:layout_column="1"
+                android:fontFamily="@font/orbitron_black"
+                android:text="Frog"
+                android:layout_gravity="bottom|center"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp" />
+
+            <!--Rhino-->
+            <ImageButton
+                android:tag="rhino"
+                android:id="@+id/rhino_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_row="6"
+                android:layout_column="2"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:onClick="onImageButtonClick"
+                android:background="@drawable/rhino"
+                android:contentDescription="button to display fish on click"/>
+
+            <TextView
+                android:id="@+id/rhino_title"
+                android:layout_row="7"
+                android:layout_column="2"
+                android:fontFamily="@font/orbitron_black"
+                android:text="Rhino"
+                android:layout_gravity="bottom|center"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp" />
+
+            <!--Stingray-->
+            <ImageButton
+                android:tag="stingray"
+                android:id="@+id/stingray_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_row="8"
+                android:layout_column="0"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:onClick="onImageButtonClick"
+                android:background="@drawable/stingray"
+                android:contentDescription="button to display fish on click"/>
+
+            <TextView
+                android:id="@+id/stingray_title"
+                android:layout_row="9"
+                android:layout_column="0"
+                android:fontFamily="@font/orbitron_black"
+                android:text="Stingray"
+                android:layout_gravity="bottom|center"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp" />
+
+            <!--Bat-->
+            <ImageButton
+                android:tag="bat"
+                android:id="@+id/bat_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_row="8"
+                android:layout_column="1"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:onClick="onImageButtonClick"
+                android:background="@drawable/bat"
+                android:contentDescription="button to display fish on click"/>
+
+            <TextView
+                android:id="@+id/bat_title"
+                android:layout_row="9"
+                android:layout_column="1"
+                android:fontFamily="@font/orbitron_black"
+                android:text="Bat"
+                android:layout_gravity="bottom|center"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp" />
+
+            <!--Spider-->
+            <ImageButton
+                android:tag="spider"
+                android:id="@+id/spider_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_row="8"
+                android:layout_column="2"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:onClick="onImageButtonClick"
+                android:background="@drawable/spider"
+                android:contentDescription="button to display fish on click"/>
+
+            <TextView
+                android:id="@+id/spider_title"
+                android:layout_row="9"
+                android:layout_column="2"
+                android:fontFamily="@font/orbitron_black"
+                android:text="Spider"
+                android:layout_gravity="bottom|center"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp" />
+
+            <!--Monkey-->
+            <ImageButton
+                android:tag="monkey"
+                android:id="@+id/monkey_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_row="10"
+                android:layout_column="0"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:onClick="onImageButtonClick"
+                android:background="@drawable/monkey"
+                android:contentDescription="button to display fish on click"/>
+
+            <TextView
+                android:id="@+id/monkey_title"
+                android:layout_row="11"
+                android:layout_column="0"
+                android:fontFamily="@font/orbitron_black"
+                android:text="Monkey"
+                android:layout_gravity="bottom|center"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp" />
+
+            <!--Crab-->
+            <ImageButton
+                android:tag="crab"
+                android:id="@+id/crab_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_row="10"
+                android:layout_column="1"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:onClick="onImageButtonClick"
+                android:background="@drawable/crab"
+                android:contentDescription="button to display fish on click"/>
+
+            <TextView
+                android:id="@+id/crab_title"
+                android:layout_row="11"
+                android:layout_column="1"
+                android:fontFamily="@font/orbitron_black"
+                android:text="Crab"
+                android:layout_gravity="bottom|center"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp" />
+
+            <!--Seal-->
+            <ImageButton
+                android:tag="seal"
+                android:id="@+id/seal_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_row="10"
+                android:layout_column="2"
+                android:layout_gravity="center"
+                android:layout_margin="5dp"
+                android:onClick="onImageButtonClick"
+                android:background="@drawable/seal"
+                android:contentDescription="button to display fish on click"/>
+
+            <TextView
+                android:id="@+id/seal_title"
+                android:layout_row="11"
+                android:layout_column="2"
+                android:fontFamily="@font/orbitron_black"
+                android:text="Seal"
+                android:layout_gravity="bottom|center"
+                android:textColor="#FFFFFF"
+                android:textSize="20dp" />
+
+    </GridLayout>
+    </ScrollView>
+</RelativeLayout>
